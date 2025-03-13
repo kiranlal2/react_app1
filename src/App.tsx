@@ -1,30 +1,91 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Select } from '@/components/ui/select';
+import { Card, CardContent } from '@/components/ui/card';
+import { Upload, Image, LayoutGrid, FileText, Calendar, BarChart, User } from "lucide-react";
 
-function App() {
+const PosteeyGenerator = () => {
+  // State variables for managing form inputs
+  const [topic, setTopic] = useState("");
+  const [tone, setTone] = useState("");
+  const [length, setLength] = useState("");
+  const [caption, setCaption] = useState("");
+  // const [image, setImage] = useState(null);
 
-  const [count, setCount] = useState(0)
-
-  const increment = () => {
-    setCount((current) => {
-      return (current + 1)
-    })
-  }
-  const decrement = () => {
-    setCount((current) => {
-      return (current - 1)
-    })
-  }
+  // Function to generate a caption based on the topic
+  const handleGenerateCaption = () => {
+    setCaption(`Generated caption for topic: ${topic}`);
+  };
 
   return (
-    <>
-      <div className="card">
-        <button onClick={decrement}>Decrease count</button>
-        <h1>{count}</h1>
-        <button onClick={increment}>Increase count</button>
+    <div className="flex h-screen">
+      {/* Sidebar Navigation */}
+      <div className="w-1/5 bg-gray-100 p-4 space-y-4">
+        <Button className="w-full">Quick Post</Button>
+        <div className="space-y-2">
+          <Button variant="ghost"><LayoutGrid className="mr-2" /> Dashboard</Button>
+          <Button variant="ghost"><FileText className="mr-2" /> Post Generator</Button>
+          <Button variant="ghost"><Image className="mr-2" /> Carousel Generator</Button>
+          <Button variant="ghost"><BarChart className="mr-2" /> Analytics</Button>
+          <Button variant="ghost"><Calendar className="mr-2" /> Calendar</Button>
+          <Button variant="ghost"><User className="mr-2" /> Profile</Button>
+        </div>
       </div>
-    </>
-  )
-}
 
-export default App
+      {/* Main Content Section */}
+      <div className="flex-1 p-6">
+        <h2 className="text-xl font-bold">Create Post</h2>
+        <Card className="p-4 mt-4">
+          <CardContent>
+            {/* Input field for entering topic */}
+            <label className="text-sm font-semibold">Create Caption from a Topic</label>
+            <Input 
+              placeholder="Powerful events in india History" 
+              value={topic} 
+              onChange={(e) => setTopic(e.target.value)}
+            />
+            
+            {/* Dropdowns for selecting tone and length of text */}
+            <div className="flex space-x-4 mt-4">
+              <Select value={tone} onChange={(e) => setTone(e.target.value)}>
+                <option value="">Select Tone</option>
+                <option value="Casual">Casual</option>
+                <option value="Formal">Formal</option>
+              </Select>
+              
+              <Select value={length} onChange={(e) => setLength(e.target.value)}>
+                <option value="Short">Short</option>
+                <option value="Medium">Medium</option>
+                <option value="Long">Long</option>
+              </Select>
+            </div>
+          </CardContent>
+          {/* File Upload Section */}
+          <div className="p-4 border-dashed border-2 border-gray-300 mt-4 flex flex-col items-center justify-center">
+            <Upload size={24} className="text-gray-500" />
+            <p className="text-gray-500 mt-2">Upload Image or <span className="text-blue-500 cursor-pointer">Choose from files</span></p>
+          </div>
+            
+            {/* Generate Caption Button */}
+            <Button onClick={handleGenerateCaption} className="mt-4 w-full">
+              Generate Caption
+            </Button>
+        </Card>
+      </div>
+      
+      {/* Preview Panel */}
+      <div className="flex-1 p-4">
+        <h2 className="text-xl font-bold">Preview</h2>
+        <Card className="p-4 mt-4">
+          <CardContent>
+            {/* Display generated caption */}
+            <p>{caption || "Generated caption will appear here..."}</p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export default PosteeyGenerator;
