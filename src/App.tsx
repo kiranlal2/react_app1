@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
 import { Card, CardContent } from '@/components/ui/card';
-import { Upload, Image, LayoutGrid, FileText, Calendar, BarChart, User } from "lucide-react";
+import { WandSparkles, Upload, GalleryHorizontal, LayoutGrid, Newspaper, Lightbulb, LibraryBig, FileChartColumn, ChartSpline, SquarePen, Calendar1, CircleUserRound } from "lucide-react";
 
 const PosteeyGenerator = () => {
   // State variables for managing form inputs
@@ -22,14 +22,22 @@ const PosteeyGenerator = () => {
     <div className="flex h-screen">
       {/* Sidebar Navigation */}
       <div className="w-1/5 bg-gray-100 p-4 space-y-4">
-        <Button className="w-full">Quick Post</Button>
+        <h1 className="">Posteey</h1>
+        <Button className="w-full bg-blue"><WandSparkles className="mr-2" /> Quick Post</Button>
+        <p>Content Creation & Management</p>
         <div className="space-y-2">
           <Button variant="ghost"><LayoutGrid className="mr-2" /> Dashboard</Button>
-          <Button variant="ghost"><FileText className="mr-2" /> Post Generator</Button>
-          <Button variant="ghost"><Image className="mr-2" /> Carousel Generator</Button>
-          <Button variant="ghost"><BarChart className="mr-2" /> Analytics</Button>
-          <Button variant="ghost"><Calendar className="mr-2" /> Calendar</Button>
-          <Button variant="ghost"><User className="mr-2" /> Profile</Button>
+          <Button variant="ghost"><Newspaper className="mr-2" /> Post Generator</Button>
+          <Button variant="ghost"><GalleryHorizontal className="mr-2" /> Carousel Generator</Button>
+          <Button variant="ghost"><Lightbulb className="mr-2" /> Idea Generator</Button>
+          <Button variant="ghost"><LibraryBig className="mr-2" /> My Library</Button>
+          <Button variant="ghost"><FileChartColumn className="mr-2" /> Analytics</Button>
+          <Button variant="ghost"><ChartSpline className="mr-2" /> Viral Post</Button>
+          <p>Drafts & Scheduling</p>
+          <Button variant="ghost"><SquarePen className="mr-2" /> Drafts</Button>
+          <Button variant="ghost"><Calendar1 className="mr-2" /> Calendar</Button>
+          <p>Other</p>
+          <Button variant="ghost"><CircleUserRound className="mr-2" /> Profile</Button>
         </div>
       </div>
 
