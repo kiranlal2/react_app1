@@ -51,6 +51,34 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+.primary_color {
+  color: #00b2cb;
+}
+.pri_btn {
+  background-color: #00b2cb;
+  color: #fff;
+  font-size: 14px;
+  justify-content: left;
+  text-size-adjust: 100%;
+}
+
+.sec_btn {
+  background:rgb(255, 255, 255);
+  color: rgb(43, 43, 43);
+  font-size: 14px;
+  justify-content: left;
+  text-size-adjust: 100%;
+}
+.sec_btn:hover {
+  background: #e5fcff;
+  color: #00b2cb;
+}
+.active-link button {
+  background: #e5fcff!important;
+  color: #00b2cb!important;
+  border: #00b2cb!important;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
