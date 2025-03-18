@@ -22,20 +22,20 @@ function Navbar() {
                 </NavLink>
 
                 <p className='mb-5 text-[14px]'>Content Creation & Management</p>
-                <NavLink to='/Dashboard'><Button variant="ghost" className="w-full sec_btn "><LayoutGrid className="mr-2" /> Dashboard</Button></NavLink>
-                <NavLink to='/Postgenerator'><Button variant="ghost" className="w-full sec_btn "><Newspaper className="mr-2" /> Post Generator</Button></NavLink>
-                <NavLink to='/Carouselgen'><Button variant="ghost" className="w-full sec_btn "><GalleryHorizontal className="mr-2" /> Carousel Generator</Button></NavLink>
-                <NavLink to='/Ideagen'><Button variant="ghost" className="w-full sec_btn "><Lightbulb className="mr-2" /> Idea Generator</Button></NavLink>
-                <NavLink to='/Mylibrary'><Button variant="ghost" className="w-full sec_btn "><LibraryBig className="mr-2" /> My Library</Button></NavLink>
-                <NavLink to='/Analytics'><Button variant="ghost" className="w-full sec_btn "><FileChartColumn className="mr-2" /> Analytics</Button></NavLink>
-                <NavLink to='/Viralpost'><Button variant="ghost" className="w-full sec_btn "><ChartSpline className="mr-2" /> Viral Post</Button></NavLink>
+                <NavLink to='/Dashboard' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><LayoutGrid className="mr-2" /> Dashboard</Button></NavLink>
+                <NavLink to='/Postgenerator' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><Newspaper className="mr-2" /> Post Generator</Button></NavLink>
+                <NavLink to='/Carouselgen' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><GalleryHorizontal className="mr-2" /> Carousel Generator</Button></NavLink>
+                <NavLink to='/Ideagen' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><Lightbulb className="mr-2" /> Idea Generator</Button></NavLink>
+                <NavLink to='/Mylibrary' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><LibraryBig className="mr-2" /> My Library</Button></NavLink>
+                <NavLink to='/Analytics' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><FileChartColumn className="mr-2" /> Analytics</Button></NavLink>
+                <NavLink to='/Viralpost' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><ChartSpline className="mr-2" /> Viral Post</Button></NavLink>
 
                 <p className="my-5 text-[14px]">Drafts & Scheduling</p>
-                <NavLink to='/Drafts'><Button variant="ghost" className="w-full sec_btn "><SquarePen className="mr-2" /> Drafts</Button></NavLink>
-                <NavLink to='/Calendar'><Button variant="ghost" className="w-full sec_btn "><Calendar1 className="mr-2" /> Calendar</Button></NavLink>
+                <NavLink to='/Drafts' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><SquarePen className="mr-2" /> Drafts</Button></NavLink>
+                <NavLink to='/Calendar' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><Calendar1 className="mr-2" /> Calendar</Button></NavLink>
 
                 <p className="my-5 text-[14px]">Other</p>
-                <NavLink to='/Profile'><Button variant="ghost" className="w-full sec_btn "><CircleUserRound className="mr-2" /> Profile</Button></NavLink>
+                <NavLink to='/Profile' className={({isActive}) => isActive ? 'active-link' : ''}><Button variant="ghost" className="w-full sec_btn "><CircleUserRound className="mr-2" /> Profile</Button></NavLink>
             </div>
         </div>
     );
